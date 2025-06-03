@@ -48,19 +48,7 @@ async def main() -> None:
     
     # User Proxy: 負責最終決策和互動
     user_proxy = UserProxyAgent(
-        "user_proxy",
-        human_input_mode="ALWAYS",
-        system_message="""你是用戶代理 (User Proxy)。
-        你的職責是：
-        1. 審核 Recorder 整理的研究報告
-        2. 決定是否需要更多資料或不同角度的研究
-        3. 提供最終的決策和指導
-        4. 與用戶進行互動
-        
-        如果需要結束研究，請輸入 'exit'。
-        如果需要更多研究，請明確指出需要什麼資訊。
-        如果滿意當前的研究結果，可以總結並給出結論。
-        """
+        name="user_proxy"
     )
     
     # 設定終止條件：當用戶輸入 'exit' 時結束
